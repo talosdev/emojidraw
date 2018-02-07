@@ -1,0 +1,97 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:fontFamily">@font/cheeronsta</item>
+        <item name="android:windowBackground">@null</item>
+    </style>
+
+    <style name="drawing_control_buttons" parent="main_menu_button">
+        <!--<item name="android:layout_width">@dimen/drawing_control_size</item>-->
+        <!--<item name="android:layout_height">@dimen/drawing_control_size</item>-->
+        <item name="android:background">@drawable/ripple_button_scheme_6</item>
+        <item name="android:textColor">@color/scheme_1_light</item>
+
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:clickable">true</item>
+        <item name="android:textSize">@dimen/control_button_text_size</item>
+        <item name="android:paddingStart">@dimen/control_button_padding</item>
+        <item name="android:paddingEnd">@dimen/control_button_padding</item>
+    </style>
+
+    <style name="drawing_area_with_controls">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+
+    </style>
+
+    <style name="mode_label">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/scheme_1_light</item>
+    </style>
+
+    <style name="main_menu_button">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:textColor">@color/scheme_1_light</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:fontFamily">@font/cheeronsta_bold</item>
+
+    </style>
+
+    <style name="app_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+
+        <item name="android:textAppearance">@style/titleTextAppearance</item>
+    </style>
+
+    <style name="emojiTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="defaultTextAppearance" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/text_color</item>
+    </style>
+
+    <style name="titleTextAppearance" parent="defaultTextAppearance">
+        <item name="android:textSize">42sp</item>
+        <item name="android:fontFamily">@font/cheeronsta_bold</item>
+    </style>
+
+    <style name="boldTextAppearance" parent="defaultTextAppearance">
+        <item name="android:fontFamily">@font/cheeronsta_bold</item>
+    </style>
+
+
+    <style name="messageTextAppearance" parent="defaultTextAppearance">
+        <item name="android:textColor">@color/scheme_1_light</item>
+        <item name="android:textSize">32sp</item>
+    </style>
+
+
+    <style name="tooltipTextAppearance" parent="defaultTextAppearance">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/scheme_1_light</item>
+    </style>
+
+    <style name="popup_window">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <color name="text_color">@color/scheme_6_dark</color>
+
+</resources>

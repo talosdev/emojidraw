@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<app.we.go.emojidraw.widget.CutePopup
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/popup_window"
+    app:cp_backgroundDrawable="@drawable/timeout_popup_background"
+    app:cp_firstLine="@string/time_out"
+    app:cp_emoji="@string/timeout_emoji" />

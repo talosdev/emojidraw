@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_practice">
+
+    <TextView
+        android:id="@+id/what_to_draw_prompt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/draw_prompt"
+        android:textAppearance="@style/defaultTextAppearance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/what_to_draw"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/emoji_to_draw_height"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
+        android:maxLines="2"
+        android:textAppearance="@style/boldTextAppearance"
+        android:textSize="30sp"
+        app:autoSizeTextType="uniform"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/what_to_draw_prompt"
+        tools:text="squinting face with tears and other stuff" />
+
+    <app.we.go.emojidraw.widget.EmojiTimer
+        android:id="@+id/emojiTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/what_to_draw" />
+
+
+    <LinearLayout
+        android:id="@+id/emoji_detected_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emojiTimer">
+
+
+        <TextView
+            android:id="@+id/detected_emojis_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/you_are_drawing"
+            android:textAppearance="@style/defaultTextAppearance" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/emoji_detected_recycler"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/emoji_detected_height"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <RelativeLayout
+            android:id="@+id/tooltip_container"
+            android:layout_width="match_parent"
+            android:layout_height="22dp"
+            android:visibility="invisible">
+
+            <ImageView
+                android:id="@+id/tooltip_indicator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp"
+                android:rotation="45"
+                android:src="@drawable/square" />
+
+
+            <TextView
+                android:id="@+id/tooltip"
+                android:layout_width="match_parent"
+                android:layout_height="14dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:background="@color/scheme_6_dark"
+                android:gravity="center_horizontal"
+                android:text="@string/guess_tooltip"
+                android:textAppearance="@style/tooltipTextAppearance" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <app.we.go.emojidraw.widget.DrawingViewWithControls
+        android:id="@+id/drawing_view"
+        style="@style/drawing_area_with_controls"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emoji_detected_container" />
+
+</android.support.constraint.ConstraintLayout>

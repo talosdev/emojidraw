@@ -1,0 +1,98 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "app.we.go.emojibattles"
+        minSdkVersion 21
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "app.we.go.emojidraw.CustomRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        targetCompatibility 1.8
+        sourceCompatibility 1.8
+    }
+
+
+    flavorDimensions "mode"
+
+    productFlavors {
+        standard {
+            dimension "mode"
+        }
+
+        sequential {
+            dimension "mode"
+            applicationIdSuffix ".seq"
+        }
+
+        fixed {
+            dimension "mode"
+            applicationIdSuffix ".fixed"
+        }
+    }
+
+    variantFilter { variant ->
+        def names = variant.flavors*.name
+        // To check for a certain build type, use variant.buildType.name == "<buildType>"
+        if (!names.contains("standard") && variant.buildType.name == "release") {
+            // Gradle ignores any variants that satisfy the conditions above.
+            setIgnore(true)
+        }
+    }
+
+}
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "com.android.support:appcompat-v7:${rootProject.SUPPORT_VERSION}"
+    implementation "com.android.support.constraint:constraint-layout:${rootProject.CONSTRAINT_VERSION}"
+    implementation "com.android.support:recyclerview-v7:${rootProject.SUPPORT_VERSION}"
+    implementation "com.android.support:design:${rootProject.SUPPORT_VERSION}"
+
+    // retrofit
+    implementation "com.squareup.retrofit2:retrofit:${rootProject.RETROFIT_VERSION}"
+    implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.RETROFIT_VERSION}"
+    implementation "com.squareup.retrofit2:converter-gson:${rootProject.RETROFIT_VERSION}"
+    implementation "com.squareup.okhttp3:logging-interceptor:${rootProject.OKHTTP3_VERSION}"
+
+    // rx
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.RX_JAVA_VERSION}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.RX_ANDROID_VERSION}"
+
+    // dagger
+    implementation "com.google.dagger:dagger:${rootProject.DAGGER_VERSION}"
+    annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
+    androidTestImplementation "com.google.dagger:dagger:${rootProject.DAGGER_VERSION}"
+    androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
+
+    implementation "com.jakewharton:butterknife:${rootProject.BUTTERKNIFE_VERSION}"
+    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
+
+
+    // autovalue
+    compileOnly "com.google.auto.value:auto-value:${rootProject.AUTOVALUE_VERSION}"
+    annotationProcessor "com.google.auto.value:auto-value:${rootProject.AUTOVALUE_VERSION}"
+
+    testImplementation "junit:junit:${rootProject.JUNIT_VERSION}"
+
+    androidTestImplementation "com.android.support.test:runner:${rootProject.RUNNER_VERSION}"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ESPRESSO_VERSION}"
+
+    androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
+    androidTestImplementation  'org.assertj:assertj-core:3.6.2'
+
+    testImplementation "org.mockito:mockito-core:${rootProject.MOCKITO_VERSION}"
+
+
+
+
+}
