@@ -27,7 +27,7 @@ The image recognition algorithm is available online, via an undocumented API. (*
 ![Gameplay](readme_assets/gameplay.gif)
  
  
-The gif above can be found as a video [here](https://youtu.be/yQKhzzBO0A0).
+The gif above can be found as a video [here](https://youtu.be/rqQcz5UT8mg).
  
  
 ## For recruiters
