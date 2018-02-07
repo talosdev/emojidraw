@@ -24,7 +24,7 @@ The image recognition algorithm is available online, via an undocumented API. (*
   The aim is to have the requested emoji be the first guess of the AI. When this happens, 
   you are presented with a new emoji to draw. Can you draw 10 emojis in 60 seconds?
  
- <img src="./readme_assets/gameplay.gif" width="270" height="480">
+![Gameplay](readme_assets/gameplay.gif)
  
  
 The gif above can be found as a video [here](https://youtu.be/yQKhzzBO0A0).
