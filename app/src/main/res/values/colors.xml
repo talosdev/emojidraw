@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="mainBackground">@color/scheme_1_light</color>
+    <color name="background_alpha">#ccfbcff7</color>
+    <color name="background_practice">@color/scheme_6_light</color>
+
+    <color name="scheme_1_light">#fed133</color>
+    <color name="scheme_1_medium">#e04c74</color>
+    <color name="scheme_1_dark">#cc2362</color>
+
+    <color name="scheme_2_light">#fed133</color>
+    <color name="scheme_2_medium">#40c0e7</color>
+    <color name="scheme_2_dark">#47a9b0</color>
+
+    <color name="scheme_3_light">#fed133</color>
+    <color name="scheme_3_medium">#f6a323</color>
+    <color name="scheme_3_dark">#eb8f00</color>
+
+    <color name="scheme_4_light">#9ad08c</color>
+    <color name="scheme_4_medium">#57a26b</color>
+    <color name="scheme_4_dark">#388558</color>
+
+    <color name="scheme_5_light">#ffb5b5</color>
+    <color name="scheme_5_medium">#f3a3a3</color>
+    <color name="scheme_5_dark">#ed7e7e</color>
+
+    <color name="scheme_6_light">#7bcff7</color>
+    <color name="scheme_6_medium">#1f8ccb</color>
+    <color name="scheme_6_dark">#0277bd</color>
+
+
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+
+</resources>

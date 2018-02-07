@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="drawing_area">260dp</dimen>
+    <dimen name="drawing_control_size">24dp</dimen>
+    <dimen name="timer_text_size">24sp</dimen>
+    <dimen name="button_radius">40dp</dimen>
+    <dimen name="popup_size">260dp</dimen>
+    <dimen name="icons_container_height">140dp</dimen>
+    <dimen name="emoji_detected_size">20dp</dimen>
+    <dimen name="emoji_detected_font_size">12sp</dimen>
+    <dimen name="app_title_margin">20dp</dimen>
+    <dimen name="emoji_to_draw_height">24dp</dimen>
+    <dimen name="emoji_detected_height">24dp</dimen>
+    <dimen name="control_button_text_size">8sp</dimen>
+    <dimen name="control_button_padding">0dp</dimen>
+</resources>

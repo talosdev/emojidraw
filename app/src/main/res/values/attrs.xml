@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="DrawingView">
+        <attr name="dv_backgroundColor" format="color" />
+        <attr name="dv_paintColor" format="color" />
+        <attr name="dv_strokeWidth" format="float|reference" />
+    </declare-styleable>
+    <declare-styleable name="CutePopup">
+        <attr name="cp_backgroundDrawable" format="reference" />
+        <attr name="cp_firstLine" format="string|reference" />
+        <attr name="cp_secondLine" format="string|reference" />
+        <attr name="cp_emoji" format="string|reference" />
+    </declare-styleable>
+</resources>

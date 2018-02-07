@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:fontStyle="normal"
+        android:fontWeight="400"
+        android:font="@font/cheeronsta_regular_font"
+        app:fontStyle="normal"
+        app:fontWeight="400"
+        app:font="@font/cheeronsta_regular_font"
+        tools:targetApi="o"/>
+
+
+</font-family>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/emoji_detected_size" android:layout_height="@dimen/emoji_detected_size"
+    android:gravity="center_horizontal"
+    android:textSize="@dimen/emoji_detected_font_size"
+    android:layout_margin="5dp"
+    android:textAppearance="@style/emojiTextAppearance">
+
+</TextView>

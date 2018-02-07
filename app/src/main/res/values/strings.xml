@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Emoji Draw</string>
+    <string name="you_are_drawing">Your drawing looks like:</string>
+    <string name="draw_prompt">Draw the following emoji: </string>
+    <string name="keycap">2⃣</string>
+    <string name="practice_mode">Practice mode</string>
+    <string name="start_practice">Practice</string>
+    <string name="high_scores">High Scores</string>
+    <string name="challenge_mode">Challenge mode</string>
+    <string name="challenge_friend">Challenge a friend</string>
+    <string name="respond_to_challenge">Respond to a challenge</string>
+    <string name="feature_not_available">This feature will be available soon!</string>
+    <string name="undo">Undo</string>
+    <string name="skip">Skip</string>
+    <string name="clear">Clear</string>
+    <string name="guess_tooltip">Improve your drawing so that this becomes the first guess!</string>
+    <string name="well_done">Well Done!!</string>
+    <string name="time_out">⏰   Time out!  ⏰</string>
+    <string name="win">💪  You rock!  💪</string>
+    <string name="timeout_emoji">😭</string>
+    <string name="win_emoji">💯</string>
+    <string name="network_error">😞 Check your\ninternet connection 📶</string>
+    <string name="good_work">👏  Good work  👏</string>
+    <string name="cheated">(though you cheated a bit...)</string>
+    <string name="cheated_emoji">🙊</string>
+</resources>
