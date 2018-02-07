@@ -82,34 +82,34 @@ This project is available as open-source and the code (and scope of the app) in 
    The project uses a number of libraries from the standard toolbox of an Android developer: Support
    libraries, Retrofit, Dagger2, RxJava, AutoValue, Butterknife, DiffUtil etc. 
    
-   ** Custom Views: **
+   **Custom Views:**
    The app defines a number of custom views, that are stylable through custom attributes, like 
   `DrawingView`, `DrawingViewWithControls`, `EmojiTimer` and `CutePopup`. The Views are also made reactive and 
   expose Observables rather than using callbacks.
        
    
-   ** Animations and transitions: **
+   **Animations and transitions:**
   A number of animations are shown off in the app, like the pulse animation inside the RecyclerView,
   or the "win" grow and fade in animation when the player gets an emoji right. 
   `PracticeActivity` enters and exits with custom transitions. 
    
    
-  ** Gesture detection: **
+  **Gesture detection:**
    The drawing component demonstrates ability to detect and handle touch gestures.
    
    
-  ** Responsive design: **
+  **Responsive design:**
   The UI was designed for large screens, but can be adapted to smaller devices as well, with the use
   of appropriate resource qualifiers.
  
  
-  ** Custom drawing and view manipulation: **
+  **Custom drawing and view manipulation:**
   Displaying the tooltip pointing to the correct element of the RecyclerView was a quite challenging 
   task (I wanted to have it as decoupled as possible from the RecyclerView, and not include it to the 
   layout of the item). Getting this correct included some run-time measurements and cool calculations.
   
   
-  ** Build variants: **
+  **Build variants:**
   The main game should select the emojis randomly. This complicates development: sometimes we just want
    to have simple emojis to draw (so that we can test the win case), or just test specific emojis.
   For this reason, we have defined 3 different variants that basically differ in the way that the emojis
@@ -124,17 +124,17 @@ This project is available as open-source and the code (and scope of the app) in 
  are not supposed to be a full test-suite. They just try to show the various types of testing on Android
  that I have experience with.
  
- ** JDK tests: ** 
+ **JDK tests:** 
  MVP allows us to test the view logic in isolation, by testing the Presenter, which is completely
  decoupled from the Android SDK. See `PracticePresenter`. The Presenter's dependencies are mocked
  with Mockito.
  
- ** UI tests: **
+ **UI tests:**
  We have included some UI tests, that test only one aspect of the UI (the popup windows). The UI tests
   are based on Espresso and leverage the Dagger2 capabilities to create a specific component for 
   testing, that is then used to inject a stub Presenter to the view, which has a predetermined behavior.
   
-** Other tests: **
+ **Other tests:**
   `RandomEmojiToDrawProviderTest` is a unit test of the `RandomEmojiToDrawProvider` that requires to 
   be run  on an emulator or on a device (since it reads a file from the assets), so it's included in `androidTest`
   `EmojiDetectionProvideTest` is an exploratory, non-automated test, whose purpose is just to help
