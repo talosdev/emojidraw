@@ -58,6 +58,7 @@ public class PracticePresenter extends BasePresenter<PracticeContract.View>
     public void onStrokeAdded(final List<Stroke> strokes) {
         disposables.add(
                 detectionProvider.getEmojis(strokes)
+                        // TODO move to provider
                         .subscribeOn(Schedulers.io())
                         .observeOn(AndroidSchedulers.mainThread())
                         .subscribe(this::processEmojiGuesses,
