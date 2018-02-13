@@ -3,11 +3,13 @@ package app.we.go.emojidraw.arch.di.features.practice;
 import app.we.go.emojidraw.arch.di.scope.ActivityScope;
 import app.we.go.emojidraw.features.practice.PracticeActivity;
 import dagger.Subcomponent;
+import dagger.android.AndroidInjector;
 
 @ActivityScope
-@Subcomponent(modules = {app.we.go.emojidraw.arch.di.features.practice.PracticeMvpModule.class,
+@Subcomponent(modules = {PracticeMvpModule.class,
                 PracticeConfigurationModule.class})
-public interface PracticeComponent {
+public interface PracticeComponent extends AndroidInjector<PracticeActivity> {
 
-    void inject(PracticeActivity practiceActivity);
+    @Subcomponent.Builder
+    public abstract class Builder extends AndroidInjector.Builder<PracticeActivity> {}
 }

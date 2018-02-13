@@ -2,14 +2,18 @@ package app.we.go.emojidraw.arch.di;
 
 import javax.inject.Singleton;
 
-import app.we.go.emojidraw.arch.di.features.practice.PracticeComponent;
+import app.we.go.emojidraw.ThisApplication;
+import app.we.go.emojidraw.arch.di.features.practice.PracticeModule;
 import dagger.Component;
+import dagger.android.AndroidInjectionModule;
 
 @Singleton
-@Component(modules = {ApplicationModule.class,
-        ServiceModule.class})
+@Component(modules = {
+        AndroidInjectionModule.class,
+        ApplicationModule.class,
+        ServiceModule.class,
+        PracticeModule.class})
 public interface ApplicationComponent {
 
-    PracticeComponent plusPracticeComponent();
-
+    void inject(ThisApplication thisApplication);
 }

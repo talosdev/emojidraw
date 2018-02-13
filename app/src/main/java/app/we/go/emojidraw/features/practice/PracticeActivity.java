@@ -24,13 +24,13 @@ import java.util.List;
 import javax.inject.Inject;
 
 import app.we.go.emojidraw.R;
-import app.we.go.emojidraw.ThisApplication;
 import app.we.go.emojidraw.arch.di.qualifier.PracticeDuration;
 import app.we.go.emojidraw.widget.CenteredToast;
 import app.we.go.emojidraw.widget.DrawingViewWithControls;
 import app.we.go.emojidraw.widget.EmojiTimer;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import dagger.android.AndroidInjection;
 import io.reactivex.disposables.CompositeDisposable;
 
 @SuppressWarnings("WeakerAccess")
@@ -76,14 +76,12 @@ public class PracticeActivity extends AppCompatActivity implements PracticeContr
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        AndroidInjection.inject(this);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.practice_activity);
 
         ButterKnife.bind(this);
-
-        ThisApplication.getComponent(this)
-                .plusPracticeComponent()
-                .inject(this);
 
         emojiDetectedRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         adapter = new EmojiDetectedAdapter(this);

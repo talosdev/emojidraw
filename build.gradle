@@ -33,7 +33,7 @@ ext {
     targetSdkVersion = 26
 
 
-    DAGGER_VERSION = '2.10'
+    DAGGER_VERSION = '2.14.1'
     DEXMAKER_VERSION = '1.2'
     RUNNER_VERSION = '1.0.1'
     SUPPORT_VERSION = '27.0.2'
