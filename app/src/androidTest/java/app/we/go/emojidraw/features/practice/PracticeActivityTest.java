@@ -10,8 +10,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import app.we.go.emojidraw.R;
-import app.we.go.emojidraw.ThisApplication;
-import app.we.go.emojidraw.arch.di.TestApplicationComponent;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
@@ -32,9 +30,10 @@ public class PracticeActivityTest {
 
     @Before
     public void setUp() throws Exception {
-        duration = ((TestApplicationComponent) ThisApplication.getComponent(rule.getActivity()))
-                .plusPracticeComponent()
-                .practiceDuration();
+        duration = 3;
+//                ((TestApplicationComponent) TestApplication.getComponent(rule.getActivity()))
+//                .plusPracticeComponent()
+//                .practiceDuration();
     }
 
     @Test

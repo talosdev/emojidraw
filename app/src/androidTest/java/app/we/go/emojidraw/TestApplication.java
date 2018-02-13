@@ -8,6 +8,7 @@ public class TestApplication extends ThisApplication {
     @Override
     protected ApplicationComponent createComponent() {
         return DaggerTestApplicationComponent.builder()
+                .context(this)
                 .build();
 
     }
