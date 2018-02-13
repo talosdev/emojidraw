@@ -7,7 +7,6 @@ import java.util.List;
 import javax.inject.Inject;
 
 import app.we.go.emojidraw.api.EmojiDetectionProvider;
-import app.we.go.emojidraw.arch.di.qualifier.PracticeSize;
 import app.we.go.emojidraw.arch.di.scope.ActivityScope;
 import app.we.go.emojidraw.arch.mvp.BasePresenter;
 import app.we.go.emojidraw.data.EmojiToDraw;
@@ -33,7 +32,7 @@ public class PracticePresenter extends BasePresenter<PracticeContract.View>
 
     @Inject
     public PracticePresenter(EmojiDetectionProvider detectionProvider, EmojiToDrawProvider emojiToDrawProvider,
-                             @PracticeSize Integer nEmojis) {
+                             Integer nEmojis) {
         this.detectionProvider = detectionProvider;
         this.emojiToDrawProvider = emojiToDrawProvider;
         this.nEmojis = nEmojis;

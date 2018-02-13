@@ -2,8 +2,6 @@ package app.we.go.emojidraw.arch.di.features.practice;
 
 import android.os.Build;
 
-import app.we.go.emojidraw.arch.di.qualifier.PracticeSize;
-import app.we.go.emojidraw.arch.di.qualifier.PracticeDuration;
 import app.we.go.emojidraw.arch.di.scope.ActivityScope;
 import app.we.go.emojidraw.data.EmojiToDrawProvider;
 import app.we.go.emojidraw.data.RandomEmojiToDrawProvider;

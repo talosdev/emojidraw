@@ -30,20 +30,9 @@ class EmojiDetectionProvider
     }
 
     private fun convertStrokesToArray(strokes: List<Stroke>): Array<Array<IntArray>?> {
-        val arr = arrayOfNulls<Array<IntArray>>(strokes.size)
-        for (i in strokes.indices) {
-            val stroke = strokes[i]
-            val x = IntArray(stroke.xcoords.size)
-            val y = IntArray(stroke.ycoords.size)
-            for (j in 0..x.size) {
-                x[j] = stroke.xcoords[i]
-                y[j] = stroke.ycoords[i]
-            }
-            val z = IntArray(0)
-
-            arr[i] = arrayOf(x, y, z)
-        }
-        return arr
+        return strokes.map { stroke ->
+            arrayOf(stroke.xcoords.toIntArray(), stroke.ycoords.toIntArray(), IntArray(0)) }
+                .toTypedArray()
     }
 
 
@@ -71,7 +60,7 @@ class EmojiDetectionProvider
             val second = array.getJSONArray(1)
             val emojiArray = second.getJSONArray(0).getJSONArray(1)
 
-            return (0..emojiArray.length()).map { emojiArray.getString(it) }
+            return (0 until emojiArray.length()).map { emojiArray.getString(it) }
         } catch (e: JSONException) {
             e.printStackTrace()
         }
