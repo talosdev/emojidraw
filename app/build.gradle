@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 27
@@ -72,11 +73,13 @@ dependencies {
     // dagger
     implementation "com.google.dagger:dagger:${rootProject.DAGGER_VERSION}"
     annotationProcessor "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
+    kapt "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
     androidTestImplementation "com.google.dagger:dagger:${rootProject.DAGGER_VERSION}"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
 
     implementation "com.jakewharton:butterknife:${rootProject.BUTTERKNIFE_VERSION}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
+    kapt "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
 
 
     // autovalue
