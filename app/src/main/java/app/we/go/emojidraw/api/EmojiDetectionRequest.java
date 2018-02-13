@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 
 @SuppressWarnings("WeakerAccess")
-class EmojiDetectionRequest {
+public class EmojiDetectionRequest {
 
     private static final String OPTIONS = "enable_pre_space";
     private static final String LANGUAGE = "emoji_rotated";
