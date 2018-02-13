@@ -15,23 +15,10 @@ import dagger.Provides;
 @Module
 public class ApplicationModule {
 
-    private final Context context;
-
-    public ApplicationModule(final Context context) {
-        this.context = context;
-    }
-
-
-    @Provides
-    @Singleton
-    Context provideContext() {
-        return context;
-    }
-
     @Provides
     @Singleton
     @CanvasSize
-    Integer provideCanvasSize() {
+    Integer provideCanvasSize(Context context) {
         return context.getResources().getDimensionPixelSize(R.dimen.drawing_area);
     }
 

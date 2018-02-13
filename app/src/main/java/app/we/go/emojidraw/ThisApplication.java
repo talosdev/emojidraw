@@ -31,7 +31,7 @@ public class ThisApplication extends Application implements HasActivityInjector 
 
     protected ApplicationComponent createComponent() {
         return DaggerApplicationComponent.builder()
-                .applicationModule(new ApplicationModule(this))
+                .context(this)
                 .build();
     }
 
