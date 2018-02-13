@@ -2,7 +2,6 @@ package app.we.go.emojidraw.features.practice;
 
 import javax.inject.Inject;
 
-import app.we.go.emojidraw.api.EmojiDetectionProvider;
 import app.we.go.emojidraw.arch.di.qualifier.PracticeDuration;
 import app.we.go.emojidraw.arch.di.scope.ActivityScope;
 import app.we.go.emojidraw.data.EmojiToDrawProvider;

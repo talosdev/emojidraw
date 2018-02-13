@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import app.we.go.emojidraw.api.EmojiDetectionProvider;
 import app.we.go.emojidraw.data.EmojiToDraw;
 import app.we.go.emojidraw.data.EmojiToDrawProvider;
 import io.reactivex.Single;
