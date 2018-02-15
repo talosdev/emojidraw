@@ -2,7 +2,6 @@ package app.we.go.emojidraw.arch.di
 
 import android.content.Context
 import app.we.go.emojidraw.R
-import app.we.go.emojidraw.arch.di.qualifier.CanvasSize
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

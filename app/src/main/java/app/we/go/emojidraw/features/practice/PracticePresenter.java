@@ -7,7 +7,7 @@ import java.util.List;
 import javax.inject.Inject;
 
 import app.we.go.emojidraw.api.EmojiDetectionProvider;
-import app.we.go.emojidraw.arch.di.scope.ActivityScope;
+import app.we.go.emojidraw.arch.di.ActivityScope;
 import app.we.go.emojidraw.arch.mvp.BasePresenter;
 import app.we.go.emojidraw.data.EmojiToDraw;
 import app.we.go.emojidraw.data.EmojiToDrawProvider;

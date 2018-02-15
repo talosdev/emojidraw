@@ -1,7 +1,7 @@
 package app.we.go.emojidraw.arch.di.features.practice
 
-import app.we.go.emojidraw.arch.di.qualifier.PracticeDuration
-import app.we.go.emojidraw.arch.di.scope.ActivityScope
+import app.we.go.emojidraw.arch.di.PracticeDuration
+import app.we.go.emojidraw.arch.di.ActivityScope
 import dagger.Module
 import dagger.Provides
 

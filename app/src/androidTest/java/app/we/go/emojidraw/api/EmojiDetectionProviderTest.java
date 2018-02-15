@@ -36,7 +36,7 @@ public class EmojiDetectionProviderTest {
 
         final Retrofit retrofit = new Retrofit.Builder()
                 .client(client)
-                .baseUrl(EmojiDetectionService.BASE_URL)
+                .baseUrl(ApiConstants.Companion.getBASE_URL())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build();

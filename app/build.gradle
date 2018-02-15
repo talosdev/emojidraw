@@ -76,6 +76,7 @@ dependencies {
     kapt "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
     androidTestImplementation "com.google.dagger:dagger:${rootProject.DAGGER_VERSION}"
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
+    kaptAndroidTest "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
 
     implementation "com.jakewharton:butterknife:${rootProject.BUTTERKNIFE_VERSION}"
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"

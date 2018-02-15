@@ -25,7 +25,7 @@ import javax.inject.Inject;
 
 import app.we.go.emojidraw.R;
 import app.we.go.emojidraw.ThisApplication;
-import app.we.go.emojidraw.arch.di.qualifier.PracticeDuration;
+import app.we.go.emojidraw.arch.di.PracticeDuration;
 import app.we.go.emojidraw.widget.CenteredToast;
 import app.we.go.emojidraw.widget.DrawingViewWithControls;
 import app.we.go.emojidraw.widget.EmojiTimer;

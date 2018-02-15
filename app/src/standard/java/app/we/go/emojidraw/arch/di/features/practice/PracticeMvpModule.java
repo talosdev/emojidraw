@@ -2,7 +2,7 @@ package app.we.go.emojidraw.arch.di.features.practice;
 
 import android.os.Build;
 
-import app.we.go.emojidraw.arch.di.scope.ActivityScope;
+import app.we.go.emojidraw.arch.di.ActivityScope;
 import app.we.go.emojidraw.data.EmojiToDrawProvider;
 import app.we.go.emojidraw.data.RandomEmojiToDrawProvider;
 import app.we.go.emojidraw.features.practice.PracticeContract;

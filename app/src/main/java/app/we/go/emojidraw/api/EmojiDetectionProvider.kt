@@ -1,6 +1,6 @@
 package app.we.go.emojidraw.api
 
-import app.we.go.emojidraw.arch.di.qualifier.CanvasSize
+import app.we.go.emojidraw.arch.di.CanvasSize
 import app.we.go.emojidraw.model.Stroke
 import io.reactivex.Single
 import okhttp3.ResponseBody
@@ -23,6 +23,17 @@ class EmojiDetectionProvider
                 .width(width)
                 .height(height)
                 .setStrokes(convertStrokesToArray(strokes))
+                .build()
+
+        return service.detect(req)
+                .map(::extractEmojiArrayFromResponse)
+    }
+
+    fun getEmojis(strokes: Array<Array<IntArray>>): Single<List<String>> {
+        val req = EmojiDetectionRequest.Builder()
+                .width(width)
+                .height(height)
+                .setStrokes(strokes)
                 .build()
 
         return service.detect(req)

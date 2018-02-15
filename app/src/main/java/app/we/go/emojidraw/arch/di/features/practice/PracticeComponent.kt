@@ -1,6 +1,6 @@
 package app.we.go.emojidraw.arch.di.features.practice
 
-import app.we.go.emojidraw.arch.di.scope.ActivityScope
+import app.we.go.emojidraw.arch.di.ActivityScope
 import app.we.go.emojidraw.features.practice.PracticeActivity
 import dagger.Subcomponent
 
