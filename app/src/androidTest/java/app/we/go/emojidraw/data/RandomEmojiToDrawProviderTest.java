@@ -30,7 +30,7 @@ public class RandomEmojiToDrawProviderTest {
     public void setUp() throws Exception {
         final Context context = InstrumentationRegistry.getTargetContext();
         EmojiFileReader reader = new EmojiFileReader(context);
-        emojiList = reader.getList();
+        emojiList = reader.getEmojiList();
     }
 
 

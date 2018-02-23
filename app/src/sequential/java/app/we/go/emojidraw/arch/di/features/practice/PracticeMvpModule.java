@@ -8,7 +8,6 @@ import app.we.go.emojidraw.data.SequentialEmojiToDrawProvider;
 import app.we.go.emojidraw.features.practice.PracticeContract;
 import app.we.go.emojidraw.features.practice.SequentialPracticePresenter;
 import app.we.go.emojidraw.features.practice.SequentialSharedPrefsHelper;
-import app.we.go.emojidraw.util.EmojiFileReader;
 import dagger.Binds;
 import dagger.Module;
 import dagger.Provides;

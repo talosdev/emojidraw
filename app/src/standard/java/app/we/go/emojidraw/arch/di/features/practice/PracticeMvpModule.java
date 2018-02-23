@@ -23,7 +23,7 @@ public abstract class PracticeMvpModule {
     @Provides
     @ActivityScope
     static EmojiToDrawProvider provideVersionBasedEmojiToDrawProvider(EmojiFileReader emojiFileReader) {
-        return new RandomEmojiToDrawProvider(emojiFileReader.getList(), Build.VERSION.SDK_INT);
+        return new RandomEmojiToDrawProvider(emojiFileReader.getEmojiList(), Build.VERSION.SDK_INT);
     }
 
 
