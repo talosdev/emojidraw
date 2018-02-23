@@ -32,7 +32,7 @@ public class PracticeActivityTest {
 
     @Before
     public void setUp() throws Exception {
-        duration = ((TestApplicationComponent) ThisApplication.getComponent(rule.getActivity()))
+        duration = ((TestApplicationComponent) ThisApplication.Companion.getComponent(rule.getActivity()))
                 .plusPracticeComponent()
                 .practiceDuration();
     }

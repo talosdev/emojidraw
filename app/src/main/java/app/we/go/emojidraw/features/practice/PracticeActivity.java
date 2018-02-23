@@ -81,7 +81,7 @@ public class PracticeActivity extends AppCompatActivity implements PracticeContr
 
         ButterKnife.bind(this);
 
-        ThisApplication.getComponent(this)
+        ThisApplication.Companion.getComponent(this)
                 .plusPracticeComponent()
                 .inject(this);
 
