@@ -54,7 +54,7 @@ public class RandomEmojiToDrawProvider implements EmojiToDrawProvider {
         } while (!versionSatisfied(emoji));
 
 
-        return EmojiToDraw.create(emoji.description, emoji.emoji);
+        return new EmojiToDraw(emoji.description, emoji.emoji);
     }
 
     private boolean versionSatisfied(Emoji emoji) {

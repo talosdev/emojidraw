@@ -49,7 +49,7 @@ public class PracticePresenter extends BasePresenter<PracticeContract.View>
     private void updateEmojiToDraw() {
         if (view != null) {
             final EmojiToDraw emojiToDraw = emojisToDraw.get(currentEmojiIndex);
-            view.setEmojiToDraw(emojiToDraw.emoji(), emojiToDraw.description());
+            view.setEmojiToDraw(emojiToDraw.getEmoji(), emojiToDraw.getDescription());
         }
     }
 
@@ -70,7 +70,7 @@ public class PracticePresenter extends BasePresenter<PracticeContract.View>
         if (view != null) {
             view.onGuessesReturned(emojis);
             if (!emojis.isEmpty() && currentEmojiIndex < emojisToDraw.size()) {
-                final int index = emojis.indexOf(emojisToDraw.get(currentEmojiIndex).emoji());
+                final int index = emojis.indexOf(emojisToDraw.get(currentEmojiIndex).getEmoji());
                 if (index > 0) { // if 0, user has won, so no point in showing the tooltip
                     // TODO only show the tooltip once or twice
                     view.showTooltip(index);
@@ -78,7 +78,7 @@ public class PracticePresenter extends BasePresenter<PracticeContract.View>
                     view.hideTooltip();
                 }
 
-                String currentEmoji = emojisToDraw.get(currentEmojiIndex).emoji();
+                String currentEmoji = emojisToDraw.get(currentEmojiIndex).getEmoji();
 
                 if (emojis.get(0).equals(currentEmoji)) {
                     disposables.clear(); // dispose of all pending requests

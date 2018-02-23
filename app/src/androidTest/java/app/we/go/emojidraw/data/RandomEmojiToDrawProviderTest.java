@@ -74,8 +74,8 @@ public class RandomEmojiToDrawProviderTest {
     private void verifyVersion(List<EmojiToDraw> emojisToDraw, int sdkVersion) {
         Set<String> emojis = new HashSet<>();
         for (EmojiToDraw emojiToDraw : emojisToDraw) {
-            final int sinceVersionOfEmoji = getVersionOfEmoji(emojiToDraw.emoji());
-            emojis.add(emojiToDraw.emoji());
+            final int sinceVersionOfEmoji = getVersionOfEmoji(emojiToDraw.getEmoji());
+            emojis.add(emojiToDraw.getEmoji());
 
             assertThat(sdkVersion).isGreaterThanOrEqualTo(sinceVersionOfEmoji);
         }
@@ -84,7 +84,7 @@ public class RandomEmojiToDrawProviderTest {
     private void verifyUnique(List<EmojiToDraw> emojisToDraw) {
         Set<String> emojis = new HashSet<>();
         for (EmojiToDraw emojiToDraw : emojisToDraw) {
-            emojis.add(emojiToDraw.emoji());
+            emojis.add(emojiToDraw.getEmoji());
         }
 
         assertThat(emojis.size()).isEqualTo(emojisToDraw.size());

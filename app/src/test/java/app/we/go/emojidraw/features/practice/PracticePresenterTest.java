@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import app.we.go.emojidraw.api.EmojiDetectionProvider;
 import app.we.go.emojidraw.data.EmojiToDraw;
 import app.we.go.emojidraw.data.EmojiToDrawProvider;
 import io.reactivex.Single;
@@ -58,8 +59,8 @@ public class PracticePresenterTest {
         presenter = new PracticePresenter(detectionProvider, emojiToDrawProvider, N_EMOJI);
 
         List<EmojiToDraw> list = new ArrayList<>();
-        list.add(EmojiToDraw.create("one o’clock", ONE_O_CLOCK_EMOJI));
-        list.add(EmojiToDraw.create("one-thirty", ONE_THIRTY_EMOJI));
+        list.add(new EmojiToDraw("one o’clock", ONE_O_CLOCK_EMOJI));
+        list.add(new EmojiToDraw("one-thirty", ONE_THIRTY_EMOJI));
 
         when(emojiToDrawProvider.provide(N_EMOJI)).thenReturn(list);
     }
