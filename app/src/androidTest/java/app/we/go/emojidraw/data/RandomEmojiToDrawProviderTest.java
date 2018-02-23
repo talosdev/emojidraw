@@ -92,8 +92,8 @@ public class RandomEmojiToDrawProviderTest {
 
     private int getVersionOfEmoji(String emoji) {
         for (Emoji e : emojiList) {
-            if (e.emoji.equals(emoji)) {
-                return e.sinceVersion;
+            if (e.getEmoji().equals(emoji)) {
+                return e.getSinceVersion();
             }
         }
         return Integer.MAX_VALUE;
