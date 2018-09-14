@@ -6,7 +6,7 @@
 
     <android.support.v7.widget.AppCompatTextView
         android:textSize="@dimen/timer_text_size"
-        android:id="@+id/timer_text"
+        android:id="@+id/timerText"
         android:textAppearance="@style/emojiTextAppearance"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
