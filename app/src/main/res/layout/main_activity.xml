@@ -51,18 +51,18 @@
         tools:layout_height="100dp">
 
         <Button
-            android:id="@+id/start_practice_button"
+            android:id="@+id/startPracticeButton"
             style="@style/main_menu_button"
             android:background="@drawable/ripple_button_scheme_6"
             android:text="@string/start_practice"
             android:textColor="@color/scheme_1_light"
-            app:layout_constraintBottom_toTopOf="@+id/challenge_friend"
+            app:layout_constraintBottom_toTopOf="@+id/challengeFriendButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <Button
-            android:id="@+id/challenge_friend"
+            android:id="@+id/challengeFriendButton"
             style="@style/main_menu_button"
             android:background="@drawable/ripple_button_scheme_3"
             android:text="@string/challenge_friend"
@@ -71,7 +71,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/start_practice_button" />
+            app:layout_constraintTop_toBottomOf="@+id/startPracticeButton" />
 
 
     </android.support.constraint.ConstraintLayout>
