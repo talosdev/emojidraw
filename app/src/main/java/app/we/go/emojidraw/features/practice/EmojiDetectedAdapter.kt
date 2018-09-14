@@ -20,7 +20,7 @@ class EmojiDetectedAdapter(val context: Context) : RecyclerView.Adapter<EmojiDet
         }
 
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): EmojiDetectedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EmojiDetectedViewHolder {
         val itemView = LayoutInflater.from(context).inflate(R.layout.emoji_detected_item, parent, false)
         return EmojiDetectedViewHolder(itemView)
     }
