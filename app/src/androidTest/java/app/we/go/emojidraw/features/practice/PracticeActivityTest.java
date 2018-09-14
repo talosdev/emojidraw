@@ -55,7 +55,7 @@ public class PracticeActivityTest {
     public void whenAllEmojisGuessed_thenWinPopupShown() throws Exception {
         onView(withText(R.string.draw_prompt)).check(matches(isDisplayed()));
 
-        onView(withId(R.id.drawing_area)).perform(swipeRight());
+        onView(withId(R.id.drawingArea)).perform(swipeRight());
 
         onView(withText(R.string.win)).check(matches(isDisplayed()));
     }
@@ -64,8 +64,8 @@ public class PracticeActivityTest {
     public void whenSkip_thenCheatedPopupShown() throws Exception {
         onView(withText(R.string.draw_prompt)).check(matches(isDisplayed()));
 
-        onView(withId(R.id.skip_button)).perform(click());
-        onView(withId(R.id.drawing_area)).perform(swipeRight());
+        onView(withId(R.id.skipButton)).perform(click());
+        onView(withId(R.id.drawingArea)).perform(swipeRight());
 
         onView(withText(R.string.good_work)).check(matches(isDisplayed()));
     }
@@ -76,7 +76,7 @@ public class PracticeActivityTest {
     public void whenWinAndTimePasses_thenTimeoutPopupNotShown() throws Exception {
         onView(withText(R.string.draw_prompt)).check(matches(isDisplayed()));
 
-        onView(withId(R.id.drawing_area)).perform(swipeRight());
+        onView(withId(R.id.drawingArea)).perform(swipeRight());
 
         onView(withText(R.string.win)).check(matches(isDisplayed()));
 

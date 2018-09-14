@@ -79,7 +79,7 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
         emojiDetectedContainer!!.visibility = View.INVISIBLE
         adapter.detectedList = emptyList()
         drawingView.animateWin(emoji)
-        drawingView.onClear()
+        drawingView.clear()
     }
 
     override fun onAllEmojisDrawn() {

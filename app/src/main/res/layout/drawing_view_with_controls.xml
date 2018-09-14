@@ -7,7 +7,7 @@
     android:paddingBottom="2dp">
 
     <app.we.go.emojidraw.widget.DrawingView
-        android:id="@+id/drawing_area"
+        android:id="@+id/drawingArea"
         android:layout_width="@dimen/drawing_area"
         android:layout_height="@dimen/drawing_area"
         android:layout_marginEnd="8dp"
@@ -22,16 +22,16 @@
 
 
     <LinearLayout
-        android:id="@+id/win_overlay"
+        android:id="@+id/winOverlay"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:visibility="gone"
         tools:visibility="visible"
-        app:layout_constraintBottom_toBottomOf="@+id/drawing_area"
-        app:layout_constraintEnd_toEndOf="@+id/drawing_area"
+        app:layout_constraintBottom_toBottomOf="@+id/drawingArea"
+        app:layout_constraintEnd_toEndOf="@+id/drawingArea"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/drawing_area"
-        app:layout_constraintTop_toTopOf="@+id/drawing_area"
+        app:layout_constraintStart_toStartOf="@+id/drawingArea"
+        app:layout_constraintTop_toTopOf="@+id/drawingArea"
         app:layout_constraintVertical_bias="1.0"
         android:orientation="vertical"
         android:gravity="center_horizontal"
@@ -41,7 +41,7 @@
 
         <TextView
             android:layout_marginTop="50dp"
-            android:id="@+id/win_emoji"
+            android:id="@+id/winEmojiTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -64,45 +64,40 @@
 
 
     <Button
-        android:id="@+id/undo_button"
+        android:id="@+id/undoButton"
         style="@style/drawing_control_buttons"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/undo"
-        app:layout_constraintBottom_toBottomOf="@+id/clear_button"
-        app:layout_constraintEnd_toStartOf="@+id/clear_button"
+        app:layout_constraintBottom_toBottomOf="@+id/clearButton"
+        app:layout_constraintEnd_toStartOf="@+id/clearButton"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/clear_button" />
+        app:layout_constraintTop_toTopOf="@+id/clearButton" />
 
     <Button
-        android:id="@+id/skip_button"
+        android:id="@+id/skipButton"
         style="@style/drawing_control_buttons"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/skip"
-        app:layout_constraintBottom_toBottomOf="@+id/clear_button"
+        app:layout_constraintBottom_toBottomOf="@+id/clearButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/clear_button"
-        app:layout_constraintTop_toTopOf="@+id/clear_button" />
+        app:layout_constraintStart_toEndOf="@+id/clearButton"
+        app:layout_constraintTop_toTopOf="@+id/clearButton" />
 
     <Button
-        android:id="@+id/clear_button"
+        android:id="@+id/clearButton"
         style="@style/drawing_control_buttons"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
         android:text="@string/clear"
-
-
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/skip_button"
-        app:layout_constraintStart_toEndOf="@+id/undo_button"
-        app:layout_constraintTop_toBottomOf="@+id/drawing_area" />
+        app:layout_constraintEnd_toStartOf="@+id/skipButton"
+        app:layout_constraintStart_toEndOf="@+id/undoButton"
+        app:layout_constraintTop_toBottomOf="@+id/drawingArea" />
 
 
 </android.support.constraint.ConstraintLayout>
