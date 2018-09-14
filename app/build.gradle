@@ -80,10 +80,6 @@ dependencies {
     androidTestAnnotationProcessor "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
     kaptAndroidTest "com.google.dagger:dagger-compiler:${rootProject.DAGGER_VERSION}"
 
-    implementation "com.jakewharton:butterknife:${rootProject.BUTTERKNIFE_VERSION}"
-    annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
-    kapt "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
-
     testImplementation "junit:junit:${rootProject.JUNIT_VERSION}"
 
     androidTestImplementation "com.android.support.test:runner:${rootProject.RUNNER_VERSION}"
