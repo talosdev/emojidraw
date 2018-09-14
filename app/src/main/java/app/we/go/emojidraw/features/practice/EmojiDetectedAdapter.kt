@@ -11,12 +11,11 @@ class EmojiDetectedAdapter(val context: Context) : RecyclerView.Adapter<EmojiDet
 
     lateinit var emojiToDraw: String
 
-    var detectedList: MutableList<String> = ArrayList()
+    var detectedList: List<String> = emptyList()
         set(list) {
             val diffResult = DiffUtil.calculateDiff(EmojiDiffCallback(list, detectedList))
             diffResult.dispatchUpdatesTo(this)
-            field.clear()
-            field.addAll(list)
+            field = list
         }
 
 
