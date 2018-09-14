@@ -38,7 +38,6 @@ ext {
     RETROFIT_VERSION = '2.3.0'
     OKHTTP3_VERSION = '3.5.0' // for retrofit
     GLIDE_VERSION = '3.7.0'
-    AUTOVALUE_VERSION = '1.4'
     JUNIT_VERSION = '4.12'
     ESPRESSO_VERSION = '3.0.1'
     MOCKITO_VERSION = '2.8.9'
