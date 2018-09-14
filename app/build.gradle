@@ -82,11 +82,6 @@ dependencies {
     annotationProcessor "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
     kapt "com.jakewharton:butterknife-compiler:${rootProject.BUTTERKNIFE_VERSION}"
 
-
-    // autovalue
-    compileOnly "com.google.auto.value:auto-value:${rootProject.AUTOVALUE_VERSION}"
-    annotationProcessor "com.google.auto.value:auto-value:${rootProject.AUTOVALUE_VERSION}"
-
     testImplementation "junit:junit:${rootProject.JUNIT_VERSION}"
 
     androidTestImplementation "com.android.support.test:runner:${rootProject.RUNNER_VERSION}"
