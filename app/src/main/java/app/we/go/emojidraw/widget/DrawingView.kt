@@ -36,7 +36,7 @@ class DrawingView @JvmOverloads constructor(
     private var currentStroke: Stroke = Stroke()
 
     private val pubsub = PublishSubject.create<List<Stroke>>()
-    
+
     @ColorInt
     private val bgColor: Int
     @ColorInt
@@ -46,20 +46,18 @@ class DrawingView @JvmOverloads constructor(
 
 
     init {
-        val a = context.theme.obtainStyledAttributes(
+        val typedArray = context.obtainStyledAttributes(
             attrs,
             R.styleable.DrawingView,
             0, 0)
 
-        try {
-            bgColor = a.getColor(R.styleable.DrawingView_dv_backgroundColor,
-                ContextCompat.getColor(context, android.R.color.white))
-            paintColor = a.getColor(R.styleable.DrawingView_dv_paintColor,
-                ContextCompat.getColor(context, android.R.color.black))
-            strokeWidth = a.getFloat(R.styleable.DrawingView_dv_strokeWidth, 10f)
-        } finally {
-            a.recycle()
-        }
+        bgColor = typedArray.getColor(R.styleable.DrawingView_dv_backgroundColor,
+            ContextCompat.getColor(context, android.R.color.white))
+        paintColor = typedArray.getColor(R.styleable.DrawingView_dv_paintColor,
+            ContextCompat.getColor(context, android.R.color.black))
+        strokeWidth = typedArray.getFloat(R.styleable.DrawingView_dv_strokeWidth, 10f)
+
+        typedArray.recycle()
 
         paint = Paint().apply {
             isAntiAlias = true
@@ -90,10 +88,9 @@ class DrawingView @JvmOverloads constructor(
         clearDrawingCanvas()
     }
 
-   
 
     override fun onDraw(canvas: Canvas) {
-        (paths+currentPath).map {
+        (paths + currentPath).map {
             drawingCanvas.drawPath(it, paint)
         }
 
