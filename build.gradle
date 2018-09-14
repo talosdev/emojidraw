@@ -28,21 +28,13 @@ task clean(type: Delete) {
 }
 
 ext {
-    compileSdkVersion = 26
-    buildToolsVersion = '26.0.2'
-    minSdkVersion = 16
-    targetSdkVersion = 26
-
-
-    DAGGER_VERSION = '2.10'
-    DEXMAKER_VERSION = '1.2'
+    DAGGER_VERSION = '2.15'
     RUNNER_VERSION = '1.0.1'
-    SUPPORT_VERSION = '27.0.2'
+    SUPPORT_VERSION = '28.0.0-alpha1'
     BUTTERKNIFE_VERSION = '8.8.1'
     ASSERTJ_VERSION = '1.1.1'
     LEAKCANARY_VERSION = '1.5.1'
     GOOGLEPLAY_VERSION = '11.6.0'
-    FIREBASE_UI_VERSION = '0.6.0'
     RETROFIT_VERSION = '2.3.0'
     OKHTTP3_VERSION = '3.5.0' // for retrofit
     GLIDE_VERSION = '3.7.0'
@@ -52,10 +44,11 @@ ext {
     MOCKITO_VERSION = '2.8.9'
     CRASHLYTICS_VERSION = '2.7.1'
     HAMCREST_VERSION = '1.3'
-    TIMBER_VERSION = '4.5.1'
+    TIMBER_VERSION = '4.7.0'
     CONSTRAINT_VERSION = '1.0.2'
+    AAC_VERSION="1.1.1"
 
-    RX_JAVA_VERSION = '2.1.1'
-    RX_ANDROID_VERSION = '2.0.1'
+    RX_JAVA_VERSION = '2.1.16'
+    RX_ANDROID_VERSION = '2.0.2'
 
 }

@@ -5,7 +5,7 @@ import app.we.go.emojidraw.features.practice.PracticeActivity
 import dagger.Subcomponent
 
 @ActivityScope
-@Subcomponent(modules = [(app.we.go.emojidraw.arch.di.features.practice.PracticeMvpModule::class), (PracticeConfigurationModule::class)])
+@Subcomponent(modules = [(PracticeMvpModule::class), (PracticeConfigurationModule::class)])
 interface PracticeComponent {
 
     fun inject(practiceActivity: PracticeActivity)

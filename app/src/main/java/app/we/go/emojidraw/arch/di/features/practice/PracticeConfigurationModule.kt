@@ -5,7 +5,6 @@ import app.we.go.emojidraw.arch.di.ActivityScope
 import dagger.Module
 import dagger.Provides
 
-@ActivityScope
 @Module
 object PracticeConfigurationModule {
 
