@@ -107,10 +107,12 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
             // so that it points to the correct recycler item.
             // CAUTION: this calculation relies on the exact layout of the recycler, eg it will be off
             // if the recycler has item decorations
-            val targetRecyclerItem = emojiDetectedRecycler!!.layoutManager!!.findViewByPosition(position)
-            val lp = targetRecyclerItem.layoutParams as ViewGroup.MarginLayoutParams
-            val width = targetRecyclerItem.measuredWidth + lp.leftMargin + lp.rightMargin
-            tooltipIndicator.translationX = (position - (n - 1) / 2f) * width
+            val targetRecyclerItem = emojiDetectedRecycler?.layoutManager?.findViewByPosition(position)
+            targetRecyclerItem?.let {
+                val lp = it.layoutParams as ViewGroup.MarginLayoutParams
+                val width = it.measuredWidth + lp.leftMargin + lp.rightMargin
+                tooltipIndicator.translationX = (position - (n - 1) / 2f) * width
+            }
         }
     }
 
@@ -137,7 +139,7 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
         val b = dialogBuilder.create()
         b.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        dialogView.setOnClickListener { v -> b.dismiss() }
+        dialogView.setOnClickListener { b.dismiss() }
 
         b.show()
     }
