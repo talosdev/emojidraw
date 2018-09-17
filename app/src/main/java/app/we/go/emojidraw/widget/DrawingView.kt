@@ -68,7 +68,6 @@ class DrawingView @JvmOverloads constructor(
             strokeCap = Paint.Cap.ROUND
             strokeWidth = this@DrawingView.strokeWidth
         }
-
     }
 
 
@@ -102,7 +101,6 @@ class DrawingView @JvmOverloads constructor(
     override fun onTouchEvent(event: MotionEvent): Boolean {
 
         when (event.action) {
-
             MotionEvent.ACTION_DOWN -> {
                 // Little hack to make sure "points" can be drawn
                 currentPath.moveTo(event.x - 1, event.y - 1)
@@ -160,6 +158,5 @@ class DrawingView @JvmOverloads constructor(
     private fun clearDrawingCanvas() {
         drawingCanvas.drawColor(bgColor)
     }
-
 
 }

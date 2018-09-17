@@ -121,7 +121,7 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
     }
 
     override fun showErrorMessage() {
-        CenteredToast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show()
+        CenteredToast.show(this, R.string.network_error, Toast.LENGTH_SHORT)
     }
 
     override fun onTimeOut() {

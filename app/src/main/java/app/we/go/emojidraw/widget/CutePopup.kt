@@ -7,6 +7,7 @@ import android.view.View
 import android.widget.FrameLayout
 
 import app.we.go.emojidraw.R
+import app.we.go.emojidraw.R.drawable.emoji
 import kotlinx.android.synthetic.main.popup_generic.view.*
 
 class CutePopup @JvmOverloads constructor(
@@ -26,12 +27,14 @@ class CutePopup @JvmOverloads constructor(
         val secondLine = typedArray.getString(R.styleable.CutePopup_cp_secondLine)
         val emoji = typedArray.getString(R.styleable.CutePopup_cp_emoji)
 
-        if (backgroundDrawable != null) {
-            popupContainer.background = backgroundDrawable
+        typedArray.recycle()
+
+        backgroundDrawable?.let {
+            popupContainer.background = it
         }
 
         if (!TextUtils.isEmpty(firstLine)) {
-            firstLineTextView!!.text = firstLine
+            firstLineTextView.text = firstLine
         }
         if (!TextUtils.isEmpty(secondLine)) {
             secondLineTextView.visibility = View.VISIBLE
@@ -40,8 +43,6 @@ class CutePopup @JvmOverloads constructor(
         if (!TextUtils.isEmpty(emoji)) {
             emojiTextView.text = emoji
         }
-
-        typedArray.recycle()
     }
 
 }
