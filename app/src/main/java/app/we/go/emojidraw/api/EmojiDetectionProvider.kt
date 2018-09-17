@@ -40,7 +40,7 @@ class EmojiDetectionProvider
                 .map(::extractEmojiArrayFromResponse)
     }
 
-    private fun convertStrokesToArray(strokes: List<Stroke>): Array<Array<IntArray>?> {
+    private fun convertStrokesToArray(strokes: List<Stroke>): Array<Array<IntArray>> {
         return strokes.map { stroke ->
             arrayOf(stroke.xcoords.toIntArray(), stroke.ycoords.toIntArray(), IntArray(0)) }
                 .toTypedArray()
