@@ -17,16 +17,6 @@ import java.lang.reflect.Method
 class CustomRunner : AndroidJUnitRunner() {
 
     override fun onStart() {
-        //        RxJavaPlugins.setInitComputationSchedulerHandler(
-        //                Rx2Idler.create("RxJava 2.x Computation Scheduler"));
-        //
-        //        RxJavaPlugins.setInitIoSchedulerHandler(
-        //                Rx2Idler.create("RxJava 2.x IO Scheduler"));
-        //
-        //        RxJavaPlugins.setInitNewThreadSchedulerHandler(
-        //                Rx2Idler.create("RxJava 2.x New Thread Scheduler"));
-        //
-
         runOnMainSync {
             val app = targetContext.applicationContext
             disableAnimations(app)

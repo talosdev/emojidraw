@@ -3,7 +3,7 @@ package app.we.go.emojidraw.arch.mvp
 import io.reactivex.disposables.CompositeDisposable
 
 
-open abstract class BasePresenter<V : MVP.View> : MVP.Presenter<V> {
+abstract class BasePresenter<V : MVP.View> : MVP.Presenter<V> {
 
     protected var view: V? = null
 

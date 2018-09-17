@@ -23,15 +23,12 @@ class ServiceModule {
                 .addInterceptor(loggingInterceptor)
                 .build()
 
-        //noinspection UnnecessaryLocalVariable
-        val retrofit = Retrofit.Builder()
+        return Retrofit.Builder()
                 .client(client)
                 .baseUrl(ApiConstants.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
-
-        return retrofit
     }
 
 

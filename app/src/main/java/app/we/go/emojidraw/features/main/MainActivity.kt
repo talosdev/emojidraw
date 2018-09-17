@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         challengeFriendButton.setOnClickListener {
-            CenteredToast.makeText(this, R.string.feature_not_available, Toast.LENGTH_SHORT).show()
+            CenteredToast.show(this, R.string.feature_not_available, Toast.LENGTH_SHORT)
         }
     }
 

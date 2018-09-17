@@ -7,18 +7,16 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 
-
 // Toast with centered text
+// TODO convert to an extension function on Activity?
 object CenteredToast {
 
-
-    fun makeText(context: Context, @StringRes message: Int, duration: Int): Toast {
+    fun show(context: Context, @StringRes message: Int, duration: Int) {
         val toast = Toast.makeText(context, message, duration)
         val layout = toast.view as LinearLayout
-        if (layout.childCount > 0) {
-            val tv = layout.getChildAt(0) as TextView
-            tv.gravity = Gravity.CENTER_HORIZONTAL
+        (layout.getChildAt(0) as TextView?)?.apply {
+            gravity = Gravity.CENTER_HORIZONTAL
         }
-        return toast
+        toast.show()
     }
 }

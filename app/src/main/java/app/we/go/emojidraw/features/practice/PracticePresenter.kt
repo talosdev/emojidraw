@@ -30,10 +30,8 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
     }
 
     private fun updateEmojiToDraw() {
-        if (view != null) {
-            val (description, emoji) = emojisToDraw[currentEmojiIndex]
-            view!!.setEmojiToDraw(emoji, description)
-        }
+        val (description, emoji) = emojisToDraw[currentEmojiIndex]
+        view?.setEmojiToDraw(emoji, description)
     }
 
     override fun onStrokeAdded(strokes: List<Stroke>) {

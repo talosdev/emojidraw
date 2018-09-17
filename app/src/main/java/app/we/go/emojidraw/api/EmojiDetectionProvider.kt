@@ -20,30 +20,34 @@ class EmojiDetectionProvider
 
     fun getEmojis(strokes: List<Stroke>): Single<List<String>> {
         val req = EmojiDetectionRequest.Builder()
-                .width(width)
-                .height(height)
-                .setStrokes(convertStrokesToArray(strokes))
-                .build()
+            .width(width)
+            .height(height)
+            .setStrokes(convertStrokesToArray(strokes))
+            .build()
 
         return service.detect(req)
-                .map(::extractEmojiArrayFromResponse)
+            .map(::extractEmojiArrayFromResponse)
     }
 
     fun getEmojis(strokes: Array<Array<IntArray>>): Single<List<String>> {
         val req = EmojiDetectionRequest.Builder()
-                .width(width)
-                .height(height)
-                .setStrokes(strokes)
-                .build()
+            .width(width)
+            .height(height)
+            .setStrokes(strokes)
+            .build()
 
         return service.detect(req)
-                .map(::extractEmojiArrayFromResponse)
+            .map(::extractEmojiArrayFromResponse)
     }
 
     private fun convertStrokesToArray(strokes: List<Stroke>): Array<Array<IntArray>> {
         return strokes.map { stroke ->
-            arrayOf(stroke.xcoords.toIntArray(), stroke.ycoords.toIntArray(), IntArray(0)) }
-                .toTypedArray()
+            arrayOf(
+                stroke.xcoords.toIntArray(),
+                stroke.ycoords.toIntArray(),
+                IntArray(0))
+        }
+            .toTypedArray()
     }
 
 

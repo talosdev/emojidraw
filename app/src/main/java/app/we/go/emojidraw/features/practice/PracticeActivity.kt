@@ -76,7 +76,7 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
     }
 
     override fun onEmojiDrawnCorrectly(emoji: String) {
-        emojiDetectedContainer!!.visibility = View.INVISIBLE
+        emojiDetectedContainer.visibility = View.INVISIBLE
         adapter.detectedList = emptyList()
         drawingView.animateWin(emoji)
         drawingView.clear()
@@ -121,7 +121,7 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
     }
 
     override fun showErrorMessage() {
-        CenteredToast.makeText(this, R.string.network_error, Toast.LENGTH_SHORT).show()
+        CenteredToast.show(this, R.string.network_error, Toast.LENGTH_SHORT)
     }
 
     override fun onTimeOut() {
@@ -129,19 +129,20 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
     }
 
     private fun showPopup(@LayoutRes layout: Int) {
-        val dialogBuilder = AlertDialog.Builder(this)
         val inflater = this.layoutInflater
         val dialogView = inflater.inflate(layout, null)
-        dialogBuilder.setView(dialogView)
-        dialogBuilder.setCancelable(false)
-        dialogBuilder.setOnDismissListener { this@PracticeActivity.finish() }
+        val alert = AlertDialog.Builder(this).run {
+            setView(dialogView)
+            setCancelable(false)
+            setOnDismissListener { this@PracticeActivity.finish() }
+            create()
+        }
 
-        val b = dialogBuilder.create()
-        b.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
+        alert.window!!.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
 
-        dialogView.setOnClickListener { b.dismiss() }
+        dialogView.setOnClickListener { alert.dismiss() }
 
-        b.show()
+        alert.show()
     }
 
     override fun onBackPressed() {

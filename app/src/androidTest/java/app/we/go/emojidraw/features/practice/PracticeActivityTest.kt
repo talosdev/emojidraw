@@ -36,7 +36,7 @@ class PracticeActivityTest {
     fun setUp() {
         duration = (ThisApplication.getComponent(rule.activity) as TestApplicationComponent)
             .plusPracticeComponent()
-            .practiceDuration()!!
+            .practiceDuration()
     }
 
     @Test
