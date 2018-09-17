@@ -14,7 +14,8 @@ import org.junit.Before
 import org.junit.BeforeClass
 import org.junit.Test
 import org.mockito.ArgumentMatchers.anyList
-import org.mockito.Mockito.*
+import org.mockito.Mockito.never
+import org.mockito.Mockito.verify
 
 class PracticePresenterTest {
 
@@ -129,11 +130,11 @@ class PracticePresenterTest {
 
     companion object {
 
-        private val ONE_O_CLOCK_EMOJI = "🕐"
-        private val ONE_THIRTY_EMOJI = "🕜"
-        private val TWO_O_CLOCK_EMOJI = "🕑"
-        private val TWO_THIRTY_EMOJI = "🕝"
-        private val N_EMOJI = 2
+        private const val ONE_O_CLOCK_EMOJI = "🕐"
+        private const val ONE_THIRTY_EMOJI = "🕜"
+        private const val TWO_O_CLOCK_EMOJI = "🕑"
+        private const val TWO_THIRTY_EMOJI = "🕝"
+        private const val N_EMOJI = 2
 
         @JvmStatic
         @BeforeClass
@@ -141,7 +142,6 @@ class PracticePresenterTest {
             RxAndroidPlugins.setInitMainThreadSchedulerHandler { Schedulers.trampoline() }
             RxJavaPlugins.setComputationSchedulerHandler { Schedulers.trampoline() }
             RxJavaPlugins.setIoSchedulerHandler { Schedulers.trampoline() }
-
         }
     }
 }
