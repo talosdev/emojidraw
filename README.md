@@ -68,19 +68,23 @@ This project is available as open-source and the code (and scope of the app) in 
   
   - Architecture
   - Clean code
+  - Kotlin
   - Animations and transitions
   - Testing
   
-  The project uses a layered architecture, with MVP on the presentation layer, and is highly reactive. 
+  The project uses a layered architecture, with MVP on the presentation layer.
   Code organization is based on package-by-feature (although the app as it stands has just one main feature).
    
   The project includes a number of cool features and demonstrates knowledge and experience with various 
   techniques and aspects of Android development.
-   
+
+   **Programming paradigms**
+   The programming style that is used is highly reactive (with the help of rxjava) and functional
+   (with the help of kotlin and rxjava).
    
    **Libraries:**
    The project uses a number of libraries from the standard toolbox of an Android developer: Support
-   libraries, Retrofit, Dagger2, RxJava, AutoValue, Butterknife, DiffUtil etc. 
+   libraries, Retrofit, Dagger2, RxJava, DiffUtil etc.
    
    **Custom Views:**
    The app defines a number of custom views, that are stylable through custom attributes, like 
@@ -99,7 +103,7 @@ This project is available as open-source and the code (and scope of the app) in 
    
    
   **Responsive design:**
-  The UI was designed for large screens, but can be adapted to smaller devices as well, with the use
+  The UI was designed for standard 5-inch+ screens, but can be adapted to smaller devices as well, with the use
   of appropriate resource qualifiers.
  
  
