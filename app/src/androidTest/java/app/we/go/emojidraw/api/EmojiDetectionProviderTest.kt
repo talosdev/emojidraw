@@ -24,11 +24,11 @@ class EmojiDetectionProviderTest {
     private lateinit var provider: EmojiDetectionProvider
 
     @Before
-    @Throws(Exception::class)
     fun setUp() {
 
-        val loggingInterceptor = HttpLoggingInterceptor()
-        loggingInterceptor.level = HttpLoggingInterceptor.Level.BODY
+        val loggingInterceptor = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BODY
+        }
         val client = OkHttpClient.Builder()
             .addInterceptor(loggingInterceptor)
             .build()
@@ -39,12 +39,12 @@ class EmojiDetectionProviderTest {
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
+
         val service = retrofit.create(EmojiDetectionService::class.java)
         provider = EmojiDetectionProvider(service, 800, 800)
     }
 
     @Test
-    @Throws(Exception::class)
     fun name() {
         val strokes = arrayOf(
             arrayOf(
@@ -55,14 +55,16 @@ class EmojiDetectionProviderTest {
                 intArrayOf(372, 372, 372, 371, 366, 357, 346, 324, 308, 289, 270, 246, 245, 241, 237, 228, 217, 206, 195, 192, 189, 186, 178, 170, 161, 157, 156, 155, 152, 151, 144, 136, 128, 114, 109, 108, 107, 104, 101, 98, 96, 90, 87, 82, 67, 59, 58, 56, 56, 59, 62, 63, 63, 63, 63, 63, 64, 64, 64, 64, 64, 64, 64),
                 intArrayOf(221, 219, 218, 217, 217, 217, 217, 217, 217, 215, 215, 212, 212, 211, 211, 211, 211, 211, 211, 211, 212, 212, 212, 213, 215, 215, 215, 215, 215, 215, 215, 216, 217, 217, 217, 217, 217, 217, 214, 213, 213, 213, 213, 213, 211, 211, 211, 213, 214, 217, 221, 222, 223, 227, 231, 232, 233, 235, 236, 237, 240, 241, 242),
                 intArrayOf()),
-
-            arrayOf(intArrayOf(134, 134, 134, 135, 135),
+            arrayOf(
+                intArrayOf(134, 134, 134, 135, 135),
                 intArrayOf(267, 270, 271, 274, 276),
                 intArrayOf()),
-            arrayOf(intArrayOf(194, 195, 196, 196, 197, 197),
+            arrayOf(
+                intArrayOf(194, 195, 196, 196, 197, 197),
                 intArrayOf(322, 324, 328, 333, 335, 336),
                 intArrayOf()),
-            arrayOf(intArrayOf(297, 296, 296, 296, 296, 296, 296),
+            arrayOf(
+                intArrayOf(297, 296, 296, 296, 296, 296, 296),
                 intArrayOf(266, 266, 267, 268, 269, 270, 276),
                 intArrayOf()))
 
