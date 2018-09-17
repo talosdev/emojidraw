@@ -12,7 +12,7 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @ActivityScope
-class PracticePresenter @Inject
+open class PracticePresenter @Inject
 constructor(private val detectionProvider: EmojiDetectionProvider, private val emojiToDrawProvider: EmojiToDrawProvider,
             private val nEmojis: Int) : BasePresenter<PracticeContract.View>(), PracticeContract.Presenter {
 
@@ -79,7 +79,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider, private val e
     /**
      * @return `true` if there is a next emoji, false if we're finished
      */
-    protected fun handleNextEmoji(): Boolean {
+    open fun handleNextEmoji(): Boolean {
         currentEmojiIndex++
 
         return if (currentEmojiIndex == emojisToDraw.size) {
