@@ -2,8 +2,8 @@ package app.we.go.emojidraw.model
 
 class Stroke {
 
-    val xcoords = ArrayList<Int>()
-    val ycoords = ArrayList<Int>()
+    val xcoords = mutableListOf<Int>()
+    val ycoords = mutableListOf<Int>()
 
     fun addPoint(x: Int, y: Int) {
         xcoords.add(x)
