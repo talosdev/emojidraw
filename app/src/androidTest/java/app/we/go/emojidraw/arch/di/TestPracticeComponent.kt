@@ -8,5 +8,5 @@ import dagger.Subcomponent
 interface TestPracticeComponent : PracticeComponent {
 
     @PracticeDuration
-    fun practiceDuration(): Int?
+    fun practiceDuration(): Int
 }
