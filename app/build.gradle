@@ -7,7 +7,7 @@ apply plugin: 'kotlin-android-extensions'
 android {
     compileSdkVersion 28
     defaultConfig {
-        applicationId "app.we.go.emojibattles"
+        applicationId "app.we.go.emojidraw"
         minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
