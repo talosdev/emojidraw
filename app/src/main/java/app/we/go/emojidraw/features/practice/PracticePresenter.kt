@@ -22,8 +22,8 @@ constructor(private val detectionProvider: EmojiDetectionProvider, private val e
     private var won: Boolean = false
 
 
-    override fun init() {
-        super.init()
+    override fun initialize() {
+        super.initialize()
         emojisToDraw = emojiToDrawProvider.provide(nEmojis)
         updateEmojiToDraw()
     }

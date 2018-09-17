@@ -27,19 +27,19 @@ public class StubPracticePresenter extends BasePresenter<PracticeContract.View>
 
     @Override
     public void onStrokeAdded(List<Stroke> strokes) {
-        if (view != null && !strokes.isEmpty()) {
+        if (getView() != null && !strokes.isEmpty()) {
             if (cheated) {
-                view.onAllEmojisDrawnWithCheat();
+                getView().onAllEmojisDrawnWithCheat();
             } else {
-                view.onAllEmojisDrawn();
+                getView().onAllEmojisDrawn();
             }
         }
     }
 
     @Override
     public void onTimeExpired() {
-        if (view != null) {
-            view.onTimeOut();
+        if (getView() != null) {
+            getView().onTimeOut();
         }
     }
 
