@@ -89,9 +89,9 @@ dependencies {
     androidTestImplementation  'org.assertj:assertj-core:3.6.2'
 
     testImplementation "org.mockito:mockito-core:${rootProject.MOCKITO_VERSION}"
+    testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${rootProject.MOCKITO_KOTLIN_VERSION}"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-
 
 }
 repositories {

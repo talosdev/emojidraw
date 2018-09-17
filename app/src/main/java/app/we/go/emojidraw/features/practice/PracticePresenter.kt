@@ -13,7 +13,8 @@ import javax.inject.Inject
 
 @ActivityScope
 open class PracticePresenter @Inject
-constructor(private val detectionProvider: EmojiDetectionProvider, private val emojiToDrawProvider: EmojiToDrawProvider,
+constructor(private val detectionProvider: EmojiDetectionProvider,
+            private val emojiToDrawProvider: EmojiToDrawProvider,
             private val nEmojis: Int) : BasePresenter<PracticeContract.View>(), PracticeContract.Presenter {
 
     private var emojisToDraw: List<EmojiToDraw> = emptyList()
