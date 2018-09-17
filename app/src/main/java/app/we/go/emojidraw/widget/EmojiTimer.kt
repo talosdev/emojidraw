@@ -28,7 +28,6 @@ class EmojiTimer  @JvmOverloads constructor(
 
     private val disposables = CompositeDisposable()
 
-
     private val emojiNumbers = arrayOf("0⃣", "1⃣", "2⃣", "3⃣", "4⃣", "5⃣", "6⃣", "7⃣", "8⃣", "9⃣")
 
     /**
@@ -48,8 +47,6 @@ class EmojiTimer  @JvmOverloads constructor(
             .observeOn(AndroidSchedulers.mainThread())
 
 
-
-
     init {
         View.inflate(context, R.layout.emoji_timer, this)
     }
@@ -60,7 +57,8 @@ class EmojiTimer  @JvmOverloads constructor(
 
         if (!isInEditMode) {
             if (timeLimit < 0) {
-                throw IllegalStateException("The timeLimit must be set before the view is" + " attached to the window")
+                throw IllegalStateException("The timeLimit must be set before the view is " +
+                    "attached to the window")
             }
 
             disposables.add(Observable.just(timeLimit.toLong())
@@ -75,7 +73,9 @@ class EmojiTimer  @JvmOverloads constructor(
                     { this.onError(it) })
             )
 
-            countdownObservable!!.connect()
+            countdownObservable!!.connect() // Using !! is ok - if it's null it's a programming error and we must
+            // be made aware of it (it means that the client of this class has not used it correctly - has
+            // not set the time limit).
         }
     }
 

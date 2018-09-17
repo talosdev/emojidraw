@@ -26,7 +26,7 @@ class FixedEmojiToDrawProvider : EmojiToDrawProvider {
     /**
      * Returns a list of all emojis that end with the variant selector character, to make
      * sure that they are displayed and recognized correctly.
-     * Supposed to be an alternative list that `provide` can return - manual switch is required.
+     * Supposed to be an alternative list that [provide] can return - manual switch is required.
      * @return
      */
     private val emojisEndingInVariantSelector: List<EmojiToDraw> by lazy {

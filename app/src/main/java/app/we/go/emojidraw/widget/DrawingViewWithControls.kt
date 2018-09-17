@@ -15,8 +15,8 @@ import kotlinx.android.synthetic.main.drawing_view_with_controls.view.*
  * Wraps the [DrawingView] and adds Undo, Clear and Skip buttons.
  */
 class DrawingViewWithControls @JvmOverloads constructor(
-context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
-) : RelativeLayout (context, attrs, defStyleAttr, defStyleRes) {
+    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
+) : RelativeLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     private val skipPubSub = PublishSubject.create<Any>()
 
@@ -59,19 +59,21 @@ context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRe
     fun animateWin(winEmoji: String) {
         val scale = 1.75f
         val duration = 500
-        winEmojiTextView.alpha = 0.5f
-        winEmojiTextView.text = winEmoji
         winOverlay.visibility = View.VISIBLE
-        winEmojiTextView!!.animate()
-            .alpha(1f)
-            .scaleX(scale)
-            .scaleY(scale)
-            .setInterpolator(AccelerateInterpolator())
-            .setDuration(duration.toLong())
-            .withEndAction {
-                winOverlay.visibility = View.GONE
-                winEmojiTextView!!.alpha = 0f
-            }
-            .start()
+        winEmojiTextView.apply {
+            alpha = 0.5f
+            text = winEmoji
+            animate()
+                .alpha(1f)
+                .scaleX(scale)
+                .scaleY(scale)
+                .setInterpolator(AccelerateInterpolator())
+                .setDuration(duration.toLong())
+                .withEndAction {
+                    winOverlay.visibility = View.GONE
+                    winEmojiTextView.alpha = 0f
+                }
+                .start()
+        }
     }
 }
