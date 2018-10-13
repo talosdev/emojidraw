@@ -6,7 +6,6 @@ import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
 
-import io.reactivex.observers.TestObserver
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

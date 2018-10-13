@@ -93,6 +93,9 @@ dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
+    implementation "com.jakewharton.timber:timber:${rootProject.TIMBER_VERSION}"
+
+
 }
 repositories {
     mavenCentral()

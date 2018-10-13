@@ -1,6 +1,5 @@
 package app.we.go.emojidraw.features.practice
 
-import android.util.Log
 import app.we.go.emojidraw.api.EmojiDetectionProvider
 import app.we.go.emojidraw.arch.di.ActivityScope
 import app.we.go.emojidraw.arch.mvp.BasePresenter
@@ -9,6 +8,7 @@ import app.we.go.emojidraw.data.EmojiToDrawProvider
 import app.we.go.emojidraw.model.Stroke
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import timber.log.Timber
 import javax.inject.Inject
 
 @ActivityScope
@@ -70,7 +70,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
     }
 
     private fun onError(throwable: Throwable) {
-        Log.e("Presenter", "Error", throwable)
+        Timber.e(throwable)
         view?.showErrorMessage()
     }
 

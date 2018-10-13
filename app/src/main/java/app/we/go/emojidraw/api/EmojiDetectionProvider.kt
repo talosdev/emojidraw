@@ -6,7 +6,7 @@ import io.reactivex.Single
 import okhttp3.ResponseBody
 import org.json.JSONException
 import org.json.JSONObject
-import java.io.IOException
+import timber.log.Timber
 import java.util.Collections.emptyList
 import javax.inject.Inject
 import javax.inject.Singleton
@@ -57,7 +57,6 @@ class EmojiDetectionProvider
      * ["SUCCESS",[["b414e3d9cb625ee2",["👄","🛁","🛀","🚢","🍪","📗","🍋","📙","✏️","👊"],[],{"is_html_escaped":false}]]]
      * @param responseBody
      * @return
-     * @throws IOException
      */
     private fun extractEmojiArrayFromResponse(responseBody: ResponseBody): List<String> {
         val string = responseBody.string()
@@ -77,7 +76,7 @@ class EmojiDetectionProvider
 
             return (0 until emojiArray.length()).map { emojiArray.getString(it) }
         } catch (e: JSONException) {
-            e.printStackTrace()
+            Timber.e(e,"Error while parsing server response")
         }
 
         return emptyList()
