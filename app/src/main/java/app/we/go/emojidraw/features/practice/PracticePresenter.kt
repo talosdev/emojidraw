@@ -19,7 +19,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
 
     private var emojisToDraw: List<EmojiToDraw> = emptyList()
     private var currentEmojiIndex: Int = 0
-    private var cheated: Boolean = false
+    private var hasSkipped: Boolean = false
     private var won: Boolean = false
 
 
@@ -83,7 +83,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
 
         return if (currentEmojiIndex == emojisToDraw.size) {
             won = true
-            if (cheated) {
+            if (hasSkipped) {
                 view?.onAllEmojisDrawnWithCheat()
             } else
                 view?.onAllEmojisDrawn()
@@ -103,7 +103,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
 
     override fun onSkip() {
         if (currentEmojiIndex < emojisToDraw.size) {
-            cheated = true
+            hasSkipped = true
             handleNextEmoji()
         }
     }
