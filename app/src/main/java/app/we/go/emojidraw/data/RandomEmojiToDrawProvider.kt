@@ -5,6 +5,10 @@ import java.util.*
 
 private const val MAX_TRIES = 1000
 
+/**
+ * Provides a randomly selected list of emojis, that match the requested android version of the user's
+ * device (`sdkVersion`)
+ */
 class RandomEmojiToDrawProvider(private val emojiList: List<Emoji>,
                                 private val sdkVersion: Int): EmojiToDrawProvider {
     private val random: Random = Random()
@@ -24,7 +28,7 @@ class RandomEmojiToDrawProvider(private val emojiList: List<Emoji>,
             if (!list.contains(emojiToDraw)) return emojiToDraw
         }
 
-        return provideOne() //just get some emoji and return it, will probably be a duplicate...
+        return provideOne() //we have exhausted MAX_TRIES, just get some emoji and return it, will probably be a duplicate...
     }
 
     private fun provideOne(): EmojiToDraw {
