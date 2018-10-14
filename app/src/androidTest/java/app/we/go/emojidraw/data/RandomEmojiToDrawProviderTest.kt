@@ -2,16 +2,13 @@ package app.we.go.emojidraw.data
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import app.we.go.emojidraw.R.drawable.emoji
 import app.we.go.emojidraw.model.Emoji
 import app.we.go.emojidraw.util.EmojiFileReader
 import junit.framework.Assert.assertEquals
 import junit.framework.Assert.assertTrue
-import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
-import java.util.*
 
 
 @RunWith(AndroidJUnit4::class)
@@ -35,7 +32,7 @@ class RandomEmojiToDrawProviderTest {
     fun testSimple() {
         provider = RandomEmojiToDrawProvider(emojiList, 22)
         val emojisToDraw = provider.provide(100)
-        verify(emojisToDraw, 22)
+        verify(emojisToDraw, 22, 100)
     }
 
 
@@ -43,7 +40,7 @@ class RandomEmojiToDrawProviderTest {
     fun testSDK26() {
         provider = RandomEmojiToDrawProvider(emojiList, 26)
         val emojisToDraw = provider.provide(50)
-        verify(emojisToDraw, 26)
+        verify(emojisToDraw, 26, 50)
     }
 
 
@@ -51,7 +48,7 @@ class RandomEmojiToDrawProviderTest {
     fun test2Emojis() {
         provider = RandomEmojiToDrawProvider(emojiList, 19)
         val emojisToDraw = provider.provide(2)
-        verify(emojisToDraw, 19)
+        verify(emojisToDraw, 19, 2)
     }
 
 
@@ -59,13 +56,19 @@ class RandomEmojiToDrawProviderTest {
     fun testRunOutOfEmojis() {
         provider = RandomEmojiToDrawProvider(emojiList.subList(0, 20), 22)
         val emojisToDraw = provider.provide(50)
-        // Should not go into infinite loop, but will not contain
+        // Should not go into infinite loop, but will contain less than 50 elements
+        assertTrue(emojisToDraw.size < 50)
         verifyVersion(emojisToDraw, 20)
     }
 
-    private fun verify(emojisToDraw: List<EmojiToDraw>, sdkVersion: Int) {
+    private fun verify(emojisToDraw: List<EmojiToDraw>, sdkVersion: Int, expectedSize: Int) {
+        verifySize(emojisToDraw, expectedSize)
         verifyVersion(emojisToDraw, sdkVersion)
         verifyUnique(emojisToDraw)
+    }
+
+    private fun verifySize(emojisToDraw: List<EmojiToDraw>, expectedSize: Int) {
+        assertEquals(expectedSize, emojisToDraw.size)
     }
 
     private fun verifyVersion(emojisToDraw: List<EmojiToDraw>, sdkVersion: Int) {
@@ -75,17 +78,14 @@ class RandomEmojiToDrawProviderTest {
     }
 
     private fun verifyUnique(emojisToDraw: List<EmojiToDraw>) {
-        assertEquals(emojisToDraw.size,
-            emojisToDraw.map { it.emoji }
-            .distinct().size)
-
+        assertEquals(emojisToDraw.size, emojisToDraw.distinct().size)
     }
 
+    // Not s0 efficient way to get version of emoji, but doesn't matter
     private fun getVersionOfEmoji(emoji: String): Int {
         return emojiList.find {
             it.emoji == emoji
         }?.sinceVersion ?: Int.MAX_VALUE
-
     }
 
 

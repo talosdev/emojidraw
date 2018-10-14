@@ -1,6 +1,5 @@
 package app.we.go.emojidraw.features.practice
 
-import android.util.Log
 import app.we.go.emojidraw.api.EmojiDetectionProvider
 import app.we.go.emojidraw.arch.di.ActivityScope
 import app.we.go.emojidraw.arch.mvp.BasePresenter
@@ -9,6 +8,7 @@ import app.we.go.emojidraw.data.EmojiToDrawProvider
 import app.we.go.emojidraw.model.Stroke
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import timber.log.Timber
 import javax.inject.Inject
 
 @ActivityScope
@@ -19,7 +19,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
 
     private var emojisToDraw: List<EmojiToDraw> = emptyList()
     private var currentEmojiIndex: Int = 0
-    private var cheated: Boolean = false
+    private var hasSkipped: Boolean = false
     private var won: Boolean = false
 
 
@@ -70,7 +70,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
     }
 
     private fun onError(throwable: Throwable) {
-        Log.e("Presenter", "Error", throwable)
+        Timber.e(throwable)
         view?.showErrorMessage()
     }
 
@@ -83,7 +83,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
 
         return if (currentEmojiIndex == emojisToDraw.size) {
             won = true
-            if (cheated) {
+            if (hasSkipped) {
                 view?.onAllEmojisDrawnWithCheat()
             } else
                 view?.onAllEmojisDrawn()
@@ -103,7 +103,7 @@ constructor(private val detectionProvider: EmojiDetectionProvider,
 
     override fun onSkip() {
         if (currentEmojiIndex < emojisToDraw.size) {
-            cheated = true
+            hasSkipped = true
             handleNextEmoji()
         }
     }

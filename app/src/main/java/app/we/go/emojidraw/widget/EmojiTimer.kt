@@ -3,7 +3,6 @@ package app.we.go.emojidraw.widget
 import android.annotation.SuppressLint
 import android.content.Context
 import android.util.AttributeSet
-import android.util.Log
 import android.view.View
 import android.widget.LinearLayout
 import app.we.go.emojidraw.R
@@ -13,6 +12,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observables.ConnectableObservable
 import kotlinx.android.synthetic.main.emoji_timer.view.*
+import timber.log.Timber
 import java.util.concurrent.TimeUnit
 
 /**
@@ -20,8 +20,8 @@ import java.util.concurrent.TimeUnit
  * attached to the window. The `timeLimit` is configurable. It exposes a completable
  * so that clients of this view can react to the expiration.
  */
-class EmojiTimer  @JvmOverloads constructor(
-    context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
+class EmojiTimer @JvmOverloads constructor(
+        context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0, defStyleRes: Int = 0
 ) : LinearLayout(context, attrs, defStyleAttr, defStyleRes) {
 
     private var timeLimit = -1
@@ -43,8 +43,8 @@ class EmojiTimer  @JvmOverloads constructor(
      */
     val expirationCompletable: Completable
         get() = Completable
-            .fromObservable(countdownObservable!!)
-            .observeOn(AndroidSchedulers.mainThread())
+                .fromObservable(countdownObservable!!)
+                .observeOn(AndroidSchedulers.mainThread())
 
 
     init {
@@ -58,19 +58,19 @@ class EmojiTimer  @JvmOverloads constructor(
         if (!isInEditMode) {
             if (timeLimit < 0) {
                 throw IllegalStateException("The timeLimit must be set before the view is " +
-                    "attached to the window")
+                        "attached to the window")
             }
 
             disposables.add(Observable.just(timeLimit.toLong())
-                .mergeWith(
-                    countdownObservable!!
-                        .map { v -> timeLimit.toLong() - v - 1 })
-                .map<String> { this.convertToTimeString(it) }
-                .map<String> { this.convertToEmoji(it) }
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                    { s -> timerText.text = s },
-                    { this.onError(it) })
+                    .mergeWith(
+                            countdownObservable!!
+                                    .map { v -> timeLimit.toLong() - v - 1 })
+                    .map<String> { this.convertToTimeString(it) }
+                    .map<String> { this.convertToEmoji(it) }
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .subscribe(
+                            { s -> timerText.text = s },
+                            { this.onError(it) })
             )
 
             countdownObservable!!.connect() // Using !! is ok - if it's null it's a programming error and we must
@@ -85,8 +85,8 @@ class EmojiTimer  @JvmOverloads constructor(
     }
 
     private fun onError(throwable: Throwable) {
-        Log.e("EmojiTimer", "Fatal error in timer", throwable)
-        // This should never really happen - crash the app so that we
+        Timber.e(throwable, "Fatal error in timer")
+        // This should never really happen - crash the app so that we don't miss this
         throw RuntimeException(throwable)
     }
 
@@ -97,13 +97,13 @@ class EmojiTimer  @JvmOverloads constructor(
     fun setTimeLimit(timeLimit: Int) {
         this.timeLimit = timeLimit
         countdownObservable = Observable.interval(1, TimeUnit.SECONDS) // by default operates on computation scheduler
-            .take(timeLimit.toLong())
-            .publish()
+                .take(timeLimit.toLong())
+                .publish()
     }
 
     @SuppressLint("DefaultLocale") // locale is irrelevant for the formatting we are using
     private fun convertToTimeString(nsec: Long): String {
-        Log.d("s", "Converting $nsec")
+        Timber.d("Converting %d", nsec)
         if (nsec > 600) {
             throw IllegalArgumentException("Timer currently does not support values greater than 10 min")
         }
@@ -115,7 +115,7 @@ class EmojiTimer  @JvmOverloads constructor(
 
     private fun convertToEmoji(s: String): String {
         val joinToString = s.toCharArray().map {
-           if (it == ':') {
+            if (it == ':') {
                 it.toString()
             } else {
                 emojiNumbers[Character.getNumericValue(it)]
