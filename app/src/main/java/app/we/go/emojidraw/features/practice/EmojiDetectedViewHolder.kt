@@ -2,11 +2,11 @@ package app.we.go.emojidraw.features.practice
 
 import android.animation.ObjectAnimator
 import android.animation.PropertyValuesHolder
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 
-class EmojiDetectedViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+class EmojiDetectedViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
 
     private val emojiView: TextView = itemView as TextView

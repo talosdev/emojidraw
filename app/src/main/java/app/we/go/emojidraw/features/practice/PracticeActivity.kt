@@ -6,13 +6,13 @@ import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.os.Handler
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Toast
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
-import android.view.View
-import android.view.ViewGroup
-import android.widget.Toast
 import app.we.go.emojidraw.R
 import app.we.go.emojidraw.ThisApplication
 import app.we.go.emojidraw.arch.di.PracticeDuration
@@ -43,7 +43,7 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
             .plusPracticeComponent()
             .inject(this)
 
-        emojiDetectedRecycler.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL, false)
+        emojiDetectedRecycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         adapter = EmojiDetectedAdapter(this)
         emojiDetectedRecycler.adapter = adapter
 
