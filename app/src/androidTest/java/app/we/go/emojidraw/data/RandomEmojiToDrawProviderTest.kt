@@ -1,7 +1,7 @@
 package app.we.go.emojidraw.data
 
-import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import app.we.go.emojidraw.model.Emoji
 import app.we.go.emojidraw.util.EmojiFileReader
 import junit.framework.Assert.assertEquals
@@ -22,7 +22,7 @@ class RandomEmojiToDrawProviderTest {
     @Before
     @Throws(Exception::class)
     fun setUp() {
-        val context = InstrumentationRegistry.getTargetContext()
+        val context = InstrumentationRegistry.getInstrumentation().targetContext
         val reader = EmojiFileReader(context)
         emojiList = reader.emojiList
     }
