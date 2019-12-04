@@ -1,7 +1,7 @@
 package app.we.go.emojidraw.features.main
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.Toast
 import app.we.go.emojidraw.R
 import app.we.go.emojidraw.features.practice.PracticeActivity

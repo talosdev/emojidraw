@@ -1,7 +1,7 @@
 package app.we.go.emojidraw.widget
 
 import android.content.Context
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 import android.view.Gravity
 import android.widget.LinearLayout
 import android.widget.TextView

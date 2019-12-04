@@ -57,10 +57,10 @@ android {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "com.android.support:appcompat-v7:${rootProject.SUPPORT_VERSION}"
-    implementation "com.android.support.constraint:constraint-layout:${rootProject.CONSTRAINT_VERSION}"
-    implementation "com.android.support:recyclerview-v7:${rootProject.SUPPORT_VERSION}"
-    implementation "com.android.support:design:${rootProject.SUPPORT_VERSION}"
+    implementation "androidx.appcompat:appcompat:${rootProject.ANDROIDX_APPCOMPAT_VERSION}"
+    implementation "androidx.constraintlayout:constraintlayout:${rootProject.ANDROIDX_CONSTRAINT_VERSION}"
+    implementation "androidx.recyclerview:recyclerview:${rootProject.ANDROIDX_RECYCLER_VERSION}"
+//    implementation "com.google.android.material:material:1.0.0"
 
     // retrofit
     implementation "com.squareup.retrofit2:retrofit:${rootProject.RETROFIT_VERSION}"
@@ -82,8 +82,8 @@ dependencies {
 
     testImplementation "junit:junit:${rootProject.JUNIT_VERSION}"
 
-    androidTestImplementation "com.android.support.test:runner:${rootProject.RUNNER_VERSION}"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:${rootProject.ESPRESSO_VERSION}"
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
 
     androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
     androidTestImplementation  'org.assertj:assertj-core:3.6.2'

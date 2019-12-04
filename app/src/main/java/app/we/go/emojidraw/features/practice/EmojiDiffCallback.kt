@@ -1,6 +1,6 @@
 package app.we.go.emojidraw.features.practice
 
-import android.support.v7.util.DiffUtil
+import androidx.recyclerview.widget.DiffUtil
 
 internal class EmojiDiffCallback(private val newEmojis: List<String>, private val oldEmojis: List<String>) : DiffUtil.Callback() {
 
