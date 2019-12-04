@@ -82,13 +82,13 @@ dependencies {
 
     testImplementation "junit:junit:${rootProject.JUNIT_VERSION}"
 
-    androidTestImplementation 'androidx.test:core:1.2.0'
-    androidTestImplementation 'androidx.test:rules:1.1.0'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation "androidx.test:core:${rootProject.TEST_CORE_VERSION}"
+    androidTestImplementation "androidx.test:rules:${rootProject.TEST_RULES_VERSION}"
+    androidTestImplementation "androidx.test.ext:junit:${rootProject.TEST_EXT_JUNIT_VERSION}"
+    androidTestImplementation "androidx.test.espresso:espresso-core:${rootProject.ESPRESSO_VERSION}"
 
-    androidTestImplementation 'com.squareup.assertj:assertj-android:1.2.0'
-    androidTestImplementation  'org.assertj:assertj-core:3.6.2'
+    androidTestImplementation "com.squareup.assertj:assertj-android:${rootProject.ASSERTJ_ANDROID_VERSION}"
+    androidTestImplementation "org.assertj:assertj-core:${rootProject.ASSERTJ_VERSION}"
 
     testImplementation "org.mockito:mockito-core:${rootProject.MOCKITO_VERSION}"
     testImplementation "com.nhaarman.mockitokotlin2:mockito-kotlin:${rootProject.MOCKITO_KOTLIN_VERSION}"
