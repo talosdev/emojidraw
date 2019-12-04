@@ -70,7 +70,7 @@ class DrawingViewWithControls @JvmOverloads constructor(
                 .setInterpolator(AccelerateInterpolator())
                 .setDuration(duration.toLong())
                 .withEndAction {
-                    winOverlay.visibility = View.GONE
+                    this@DrawingViewWithControls.winOverlay.visibility = View.GONE
                     winEmojiTextView.alpha = 0f
                 }
                 .start()
