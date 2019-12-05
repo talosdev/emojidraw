@@ -15,7 +15,7 @@ class RandomEmojiToDrawProvider(private val emojiList: List<Emoji>,
 
     override fun provide(n: Int): List<EmojiToDraw> {
 
-        return (1..MAX_TRIES).map {
+        return (1..MAX_TRIES).asSequence().map {
             emojiList[random.nextInt(emojiList.size)]
         }
                 .filter {
@@ -25,7 +25,7 @@ class RandomEmojiToDrawProvider(private val emojiList: List<Emoji>,
                 .take(n)
                 .map {
                     EmojiToDraw(it.description, it.emoji)
-                }
+                }.toList()
 
     }
 

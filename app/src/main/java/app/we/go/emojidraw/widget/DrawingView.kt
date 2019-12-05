@@ -146,7 +146,7 @@ class DrawingView @JvmOverloads constructor(
      * Undo the last stroke that was drawn.
      */
     fun undo() {
-        if (!paths.isEmpty()) {
+        if (paths.isNotEmpty()) {
             clearDrawingCanvas()
             paths.removeAt(paths.size - 1)
             strokes.removeAt(strokes.size - 1)

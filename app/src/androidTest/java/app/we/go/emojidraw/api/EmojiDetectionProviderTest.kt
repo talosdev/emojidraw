@@ -32,7 +32,7 @@ class EmojiDetectionProviderTest {
 
         val retrofit = Retrofit.Builder()
             .client(client)
-            .baseUrl(ApiConstants.BASE_URL)
+            .baseUrl(BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .build()
@@ -66,14 +66,13 @@ class EmojiDetectionProviderTest {
                 intArrayOf()))
 
 
-        val sub = provider.getEmojis(strokes)
+        val testObs = provider.getEmojis(strokes)
             .test()
             .assertComplete()
 
-        val emojis = sub.values()[0]
-
-        for (emoji in emojis) {
-            Log.d("TEST", emoji)
+        testObs.values().first().let { emojis ->
+            emojis.forEach { Log.d("TEST", it) }
         }
+
     }
 }

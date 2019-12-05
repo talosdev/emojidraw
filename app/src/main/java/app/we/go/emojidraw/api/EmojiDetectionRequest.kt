@@ -46,7 +46,6 @@ class EmojiDetectionRequest(val options: String, val requests: List<Request>) {
         }
 
         fun build(): EmojiDetectionRequest {
-            requireNotNull(strokes)
             val request = EmojiDetectionRequest.Request(
                 writingGuide = EmojiDetectionRequest.Request.WritingGuide(width.toString(), height.toString()),
                 language = LANGUAGE,

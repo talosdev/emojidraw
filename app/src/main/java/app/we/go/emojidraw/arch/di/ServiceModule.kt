@@ -1,6 +1,6 @@
 package app.we.go.emojidraw.arch.di
 
-import app.we.go.emojidraw.api.ApiConstants
+import app.we.go.emojidraw.api.BASE_URL
 import app.we.go.emojidraw.api.EmojiDetectionService
 import dagger.Module
 import dagger.Provides
@@ -25,7 +25,7 @@ class ServiceModule {
 
         return Retrofit.Builder()
                 .client(client)
-                .baseUrl(ApiConstants.BASE_URL)
+                .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()

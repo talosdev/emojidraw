@@ -16,7 +16,7 @@ constructor() : BasePresenter<PracticeContract.View>(), PracticeContract.Present
     private var cheated: Boolean = false
 
     override fun onStrokeAdded(strokes: List<Stroke>) {
-            if (!strokes.isEmpty()) {
+            if (strokes.isNotEmpty()) {
                 if (cheated) {
                     view?.onAllEmojisDrawnWithCheat()
                 } else {
