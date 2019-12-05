@@ -64,9 +64,9 @@ class PracticeActivity : AppCompatActivity(), PracticeContract.View {
 
     }
 
-    override fun onGuessesReturned(emojis: List<String>) {
+    override fun onGuessesReturned(strings: List<String>) {
         emojiDetectedContainer!!.visibility = View.VISIBLE
-        adapter.detectedList = emojis
+        adapter.detectedList = strings
     }
 
 

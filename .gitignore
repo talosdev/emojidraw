@@ -26,5 +26,3 @@ keystore.jks
 # Java class files
 *.class
 
-*.jar
-

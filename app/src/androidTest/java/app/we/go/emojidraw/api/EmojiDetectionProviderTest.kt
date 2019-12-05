@@ -1,13 +1,11 @@
 package app.we.go.emojidraw.api
 
 import android.util.Log
-
+import okhttp3.OkHttpClient
+import okhttp3.logging.HttpLoggingInterceptor
 import org.junit.Before
 import org.junit.Ignore
 import org.junit.Test
-
-import okhttp3.OkHttpClient
-import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -78,5 +76,4 @@ class EmojiDetectionProviderTest {
             Log.d("TEST", emoji)
         }
     }
-}
 }
